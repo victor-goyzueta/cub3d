@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/14 18:23:36 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/14 18:48:54 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define FAIL_TEXTURE	"Failure load texture"
 # define FAIL_MLX_WIN	"mlx_init_window failed"
 # define FAIL_MLX_IMG	"mlx_new_image failed"
+# define CLOSE_WIN		"Closed window"
 
 # define WIDTH		1920
 # define HEIGHT		1080
@@ -156,6 +157,15 @@ void	set_keys(t_cub *cub);
 
 /*init_utils*/
 void	load_all_textures(t_cub *cub);
+
+/*parse*/
+void	parse_cub(t_cub *cub, char *file);
+
+/*hook_handlers*/
+int		render_frame(t_cub *cub);
+int		key_press(int k, t_cub *cub);
+int		key_release(int k, t_cub *cub);
+int		handle_close(t_cub *cub);
 
 /*free_utils*/
 void	free_exit(int EXIT, t_cub *cub, char *message, char **cur);

@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:58:30 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/14 18:26:30 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/14 18:51:30 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,6 @@ void	set_keys(t_cub *cub)
 	cub->keys.a = 0;
 	cub->keys.s = 0;
 	cub->keys.d = 0;
-	cub->keys.up = 0;
-	cub->keys.down = 0;
 	cub->keys.left = 0;
 	cub->keys.right = 0;
 }

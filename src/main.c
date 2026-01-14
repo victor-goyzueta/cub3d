@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:12:11 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/14 18:26:54 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/14 18:28:01 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ static void	init(t_cub *cub)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
 	cub->win.width = WIDTH;
 	cub->win.height = HEIGHT;
-	set_texture(cub); //set to zero?
 	load_all_textures(cub);
 	cub->win.win = mlx_new_window(cub->mlx, WIDTH, HEIGHT, "cub3d");
 	if (!cub->win.win)

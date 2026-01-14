@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/14 18:48:54 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/14 20:28:00 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,11 +161,24 @@ void	load_all_textures(t_cub *cub);
 /*parse*/
 void	parse_cub(t_cub *cub, char *file);
 
-/*hook_handlers*/
+/*play*/
 int		render_frame(t_cub *cub);
 int		key_press(int k, t_cub *cub);
 int		key_release(int k, t_cub *cub);
 int		handle_close(t_cub *cub);
+
+/*render_frame*/
+void	update_player(t_cub *cub);
+void	raycast(t_cub *cub);
+
+/*move_player*/
+void	move_forward(t_cub *cub);
+void	move_backward(t_cub *cub);
+void	move_left(t_cub *cub);
+void	move_right(t_cub *cub);
+
+/*bool_utils*/
+bool	is_walkable(t_map *map, double x, double y);
 
 /*free_utils*/
 void	free_exit(int EXIT, t_cub *cub, char *message, char **cur);

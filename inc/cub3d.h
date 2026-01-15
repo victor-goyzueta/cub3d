@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 20:40:25 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/16 00:03:22 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define CLOSE_WIN		"Closed window"
 # define OPEN_FD		"Open fd"
 # define CLOSE_FD		"Close fd"
+# define NO_MAP			"Map not found"
 
 # define WIDTH		1920
 # define HEIGHT		1080
@@ -76,7 +77,7 @@ typedef struct s_map
 {
 	char	**matrix;
 	char	**cpy_map;
-	char	**file;
+	char	**lines;
 	int		fd;
 	int		line_count;
 	int		start;
@@ -163,6 +164,8 @@ void	load_all_textures(t_cub *cub);
 
 /*parse*/
 void	parse_cub(t_cub *cub, char *file);
+void	get_lines(t_cub *cub, char *file);
+void	find_map_start(t_cub *cub);
 
 /*play*/
 int		render_frame(t_cub *cub);
@@ -187,6 +190,8 @@ void	move_left(t_cub *cub);
 void	move_right(t_cub *cub);
 
 /*bool_utils*/
+bool	is_spacetab(int c);
+bool	is_player_char(int c);
 bool	is_walkable(t_map *map, double x, double y);
 
 /*free_utils*/

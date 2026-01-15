@@ -19,6 +19,7 @@ MLX_FLAGS = -L minilibx -lmlx -lXext -lX11 -lm -lbsd
 
 SRCS =	src/main.c						\
 		src/parse/parse_cub.c			\
+		src/parse/get_matrix.c			\
 		src/play/hook_handlers.c		\
 		src/play/update_player.c		\
 		src/play/move_player.c			\

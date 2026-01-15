@@ -6,31 +6,48 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:47:59 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 20:40:13 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/16 00:03:29 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	get_lines(t_cub *cub, char *file)
+void	find_map_start(t_cub *cub)
 {
-	if (!cub || !file)
+	int		i;
+	int		j;
+
+	if (!cub)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
-	cub->map.fd = open(file, O_RDONLY);
-	if (cub->map.fd < 0)
-		free_exit(EXIT_FAILURE, cub, OPEN_FD, NULL);
-	//
-	if (close(cub->map.fd) != 0)
-		free_exit(EXIT_FAILURE, cub, CLOSE_FD, NULL);
+	i = 0;
+	while (cub->map.lines[i])
+	{
+		if (parse_lines_identifier(map, lines[i]) == 1)
+		{
+			i++;
+			continue ;
+		}
+		j = 0;
+		while (is_spacetab(lines[i][j]))
+			j++;
+		if (lines[i][j] == '1' || lines[i][j] == '0'
+				|| is_player_char(lines[i][j]))
+		{
+			cub->map.start = i;
+			return ;
+		}
+		i++;
+	}
+	free_exit(EXIT_FAILURE, cub, NO_MAP, NULL);
 }
 
 void	parse_cub(t_cub *cub, char *file)
 {
 	int	i;
-	
+
 	if (!cub || !file)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
 	get_lines(cub, file);
-	if (find_map_start(cub) == -1);
-		free_exit(EXIT_FAILURE, cub, "Map not found", NULL);
+	find_map_start(cub);
+	//
 }

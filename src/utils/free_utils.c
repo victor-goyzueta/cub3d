@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:45:19 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 21:20:03 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/15 23:10:01 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static void	free_map(t_cub *cub)
 		free_array(cub->map.matrix);
 	if (cub->map.cpy_map)
 		free_array(cub->map.cpy_map);
+	if (cub->map.lines)
+		free_array(cub->map.lines);
 	if (cub->map.file)
 		free_array(cub->map.file);
 	if (cub->map.no)

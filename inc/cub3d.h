@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/14 20:28:00 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/15 01:00:08 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,12 @@ int		handle_close(t_cub *cub);
 /*render_frame*/
 void	update_player(t_cub *cub);
 void	raycast(t_cub *cub);
+
+/*raycast_utils*/
+void	calculate_delta(t_cub *cub);
+void	calculate_step(t_cub *cub);
+void	put_pixel(t_cub *cub, int x, int y, int color);
+void	draw_textured_column(t_cub *cub, int x);
 
 /*move_player*/
 void	move_forward(t_cub *cub);

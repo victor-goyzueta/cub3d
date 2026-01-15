@@ -17,7 +17,18 @@ LIBFT = libft/libft.a
 MINILIBX = minilibx/libmlx_Linux.a
 MLX_FLAGS = -L minilibx -lmlx -lXext -lX11 -lm -lbsd
 
-SRCS =	src/main.c							\
+SRCS =	src/main.c						\
+		src/parse/parse_cub.c			\
+		src/play/hook_handlers.c		\
+		src/play/update_player.c		\
+		src/play/move_player.c			\
+		src/play/raycast.c				\
+		src/play/raycast_utils.c		\
+		src/play/draw_textured_column.c	\
+		src/utils/init_utils.c			\
+		src/utils/set_utils.c			\
+		src/utils/bool_utils.c			\
+		src/utils/free_utils.c			\
 
 
 OBJS = $(SRCS:src/%.c=objs/%.o)

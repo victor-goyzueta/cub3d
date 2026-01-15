@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:45:19 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/14 18:41:34 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/15 01:29:36 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	free_exit(int EXIT, t_cub *cub, char *message, char **cur)
 		free_array(cur);
 	if (EXIT == EXIT_SUCCESS)
 	{
-		ft_printf(message);
+		if (message)
+			ft_printf(message);
 		exit(EXIT);
 	}
 	else

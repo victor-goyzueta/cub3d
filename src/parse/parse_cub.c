@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:47:59 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 00:03:29 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/16 00:18:58 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	find_map_start(t_cub *cub)
 	i = 0;
 	while (cub->map.lines[i])
 	{
-		if (parse_lines_identifier(map, lines[i]) == 1)
+		if (parse_lines_identifier(map, lines[i]) == 1) //HERE
 		{
 			i++;
 			continue ;

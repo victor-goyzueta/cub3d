@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:12:11 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/14 18:28:01 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/15 20:27:30 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	validate_args(int argc, char *file)
 {
 	size_t	len;
-	
+
 	len = 0;
 	if (argc != 2 || !file || !*file)
 		ft_perror(USAGE);
@@ -57,7 +57,7 @@ static void	init(t_cub *cub)
 	if (!cub->img.ptr)
 		free_exit(EXIT_FAILURE, cub, FAIL_MLX_IMG, NULL);
 	cub->img.addr = mlx_get_data_addr(cub->img.ptr,
-		&cub->img.bpp, &cub->img.line_len, &cub->img.endian);
+			&cub->img.bpp, &cub->img.line_len, &cub->img.endian);
 	mlx_clear_window(cub->mlx, cub->win.win);
 }
 

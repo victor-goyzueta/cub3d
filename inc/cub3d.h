@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 01:00:08 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/15 20:40:25 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 # define FAIL_MLX_WIN	"mlx_init_window failed"
 # define FAIL_MLX_IMG	"mlx_new_image failed"
 # define CLOSE_WIN		"Closed window"
+# define OPEN_FD		"Open fd"
+# define CLOSE_FD		"Close fd"
 
 # define WIDTH		1920
 # define HEIGHT		1080
@@ -74,6 +76,7 @@ typedef struct s_map
 {
 	char	**matrix;
 	char	**cpy_map;
+	char	**file;
 	int		fd;
 	int		line_count;
 	int		start;

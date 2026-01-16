@@ -1,25 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_cub.c                                        :+:      :+:    :+:   */
+/*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 18:47:59 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 22:21:28 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2026/01/16 22:20:00 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2026/01/16 22:20:06 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	parse_cub(t_cub *cub, char *file)
-{
-	int	i;
-
-	if (!cub || !file)
-		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
-	get_lines(cub, file);
-	find_map_start(cub);
-	parse_map(cub);
-	//
-}
+//

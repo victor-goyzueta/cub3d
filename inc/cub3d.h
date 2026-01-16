@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 00:03:22 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/16 22:18:08 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,17 @@
 # define OPEN_FD		"Open fd"
 # define CLOSE_FD		"Close fd"
 # define NO_MAP			"Map not found"
+# define DUP_NO			"Duplicate NO texture"
+# define DUP_SO			"Duplicate SO texture"
+# define DUP_WE			"Duplicate WE texture"
+# define DUP_EA			"Duplicate EA texture"
+# define DUP_FLOOR		"Duplicate floor color"
+# define INV_FLOOR		"Invalid floor color"
+# define DUP_CEILING	"Duplicate ceiling color"
+# define INV_CEILING	"Invalid ceiling color"
+# define INV_PATH		"Invalid texture path"
+# define NO_TEXT		"Texture file not found"
+# define INV_VALOR		"Please enter a valid value to floor and ceiling color"
 
 # define WIDTH		1920
 # define HEIGHT		1080
@@ -166,6 +177,10 @@ void	load_all_textures(t_cub *cub);
 void	parse_cub(t_cub *cub, char *file);
 void	get_lines(t_cub *cub, char *file);
 void	find_map_start(t_cub *cub);
+
+/*find_map_start_utils*/
+char	*get_path(char *line);
+int		parse_color(char *str);
 
 /*play*/
 int		render_frame(t_cub *cub);

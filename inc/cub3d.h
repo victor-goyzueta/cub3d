@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 22:18:08 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/16 22:51:51 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,7 @@ void	load_all_textures(t_cub *cub);
 void	parse_cub(t_cub *cub, char *file);
 void	get_lines(t_cub *cub, char *file);
 void	find_map_start(t_cub *cub);
+void	parse_map(t_cub *cub);
 
 /*find_map_start_utils*/
 char	*get_path(char *line);

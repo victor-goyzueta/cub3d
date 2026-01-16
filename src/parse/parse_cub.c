@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:47:59 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 22:21:28 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/16 22:50:21 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	parse_cub(t_cub *cub, char *file)
 {
-	int	i;
-
 	if (!cub || !file)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
 	get_lines(cub, file);

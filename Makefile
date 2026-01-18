@@ -23,6 +23,9 @@ SRCS =	src/main.c							\
 		src/parse/find_map_start.c			\
 		src/parse/find_map_start_utils.c	\
 		src/parse/parse_map.c				\
+		src/parse/map_check.c				\
+		src/parse/map_check_utils.c			\
+		src/parse/init_player.c				\
 		src/play/hook_handlers.c			\
 		src/play/update_player.c			\
 		src/play/move_player.c				\

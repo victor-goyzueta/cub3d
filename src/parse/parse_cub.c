@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:47:59 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 23:51:03 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:07:54 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,27 @@ static void	padding_rows(t_cub *cub)
 	}
 }
 
+static void	map_check(t_cub *cub)
+{
+	int		pos_x;
+	int		pos_y;
+	int		error;
+
+	if (validate_characters(&cub->map) == -1)
+		free_exit(EXIT_FAILURE, cub, INV_CHAR, NULL);
+	if (validate_player(&cub->map, &pos_x, &pos_y) == -1)
+		free_exit(EXIT_FAILURE, cub, INV_PLAYER, NULL);
+	if (check_map_borders(&cub->map) != -1)
+		free_exit(EXIT_FAILURE, cub, OPEN_BORDERS, NULL);
+	cub->map.cpy_map = dup_map(cub->map.matrix, cub->map.height);
+	if (!cub->map.cpy_map)
+		free_exit(EXIT_FAILURE, cub, FAIL_CPY_MAP, NULL);
+	error = 0;
+	flood_fill(cub->map, pos_y, pos_x, &error);
+	if (error)
+		free_exit(EXIT_FAILURE, cub, OPEN_MAP, NULL);
+}
+
 void	parse_cub(t_cub *cub, char *file)
 {
 	if (!cub || !file)
@@ -59,4 +80,6 @@ void	parse_cub(t_cub *cub, char *file)
 	parse_map(cub);
 	validate_identifiers(cub);
 	padding_rows(cub);
+	map_check(cub);
+	init_player(cub);
 }

@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 22:20:00 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 23:23:27 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:39:43 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	update_sizes(t_cub *cub, int new_width, int new_height)
 	if (new_width > cub->map.width)
 		cub->map.width = new_width;
 	cub->map.height = new_height;
-	return 	(0);
+	return (0);
 }
 
 void	parse_map(t_cub *cub)

@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 22:51:51 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:07:06 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@
 # define INV_PATH		"Invalid texture path"
 # define NO_TEXT		"Texture file not found"
 # define INV_VALOR		"Please enter a valid value to floor and ceiling color"
+# define INV_CHAR		"Invalid characters"
+# define INV_PLAYER		"Invalid player"
+# define OPEN_BORDERS	"Invalid player"
+# define FAIL_CPY_MAP	"Copy map to check failed"
+# define OPEN_MAP		"Map is not closed"
+# define NO_PLAYER		"Map must contain one player"
 
 # define WIDTH		1920
 # define HEIGHT		1080
@@ -178,10 +184,21 @@ void	parse_cub(t_cub *cub, char *file);
 void	get_lines(t_cub *cub, char *file);
 void	find_map_start(t_cub *cub);
 void	parse_map(t_cub *cub);
+void	init_player(t_cub *cub);
 
 /*find_map_start_utils*/
 char	*get_path(char *line);
 int		parse_color(char *str);
+
+/*map_check*/
+int		validate_characters(t_map *map);
+int		validate_player(t_map *map, int *pos_x, int *pos_y);
+int		check_map_borders(t_map *map);
+
+/*map_check_utils*/
+char	**dup_map(char **src, int height);
+void	flood_fill(t_map map, int y, int x, int *error);
+
 
 /*play*/
 int		render_frame(t_cub *cub);

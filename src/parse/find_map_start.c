@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:18:26 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 22:17:37 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:40:54 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	parse_texture_west_and_east(t_cub *cub, char *line)
 	}
 	if (ft_strncmp(line, "EA ", 3) == 0)
 	{
-		if (cub->map.>ea)
+		if (cub->map.ea)
 			free_exit(EXIT_FAILURE, cub, DUP_EA, NULL);
 		cub->map.ea = get_path(line + 3);
 		if (!cub.map.ea)

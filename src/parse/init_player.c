@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 21:06:06 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 21:07:09 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:19:00 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	init_player(t_cub *cub)
 	int		y;
 	int		count;
 
-	count = validate_player(cub->map, &x, &y);
+	count = validate_player(&cub->map, &x, &y);
 	if (count != 1)
 		free_exit(EXIT_FAILURE, cub, NO_PLAYER, NULL);
 	cub->player.pos_x = x + 0.5;

@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:58:50 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 21:01:17 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:51:51 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,25 @@ char	**dup_map(char **src, int height)
 	return (copy);
 }
 
-void	flood_fill(t_map map, int y, int x, int *error)
+void	flood_fill(t_cub *cub, int y, int x, int *error)
 {
-	if (*error)
+	if (!error)
 		return ;
-	if (y < 0 || y >= map.height || x < 0 || x >= map.width)
+	if (y < 0 || y >= cub->map.height || x < 0 || x >= cub->map.width)
+	{
+		*error = 2;
+		return ;
+	}
+	if (cub->map.cpy_map[y][x] == ' ' || cub->map.cpy_map[y][x] == '\0')
 	{
 		*error = 1;
 		return ;
 	}
-	if (map.cpy_map[y][x] == ' ' || map.cpy_map[y][x] == '\0')
-	{
-		*error = 1;
+	if (cub->map.cpy_map[y][x] == '1' || cub->map.cpy_map[y][x] == 'F')
 		return ;
-	}
-	if (map.cpy_map[y][x] == '1' || map.cpy_map[y][x] == 'F')
-		return ;
-	map.cpy_map[y][x] = 'F';
-	flood_fill(map, y + 1, x, error);
-	flood_fill(map, y - 1, x, error);
-	flood_fill(map, y, x + 1, error);
-	flood_fill(map, y, x - 1, error);
+	cub->map.cpy_map[y][x] = 'F';
+	flood_fill(cub, y + 1, x, error);
+	flood_fill(cub, y - 1, x, error);
+	flood_fill(cub, y, x + 1, error);
+	flood_fill(cub, y, x - 1, error);
 }

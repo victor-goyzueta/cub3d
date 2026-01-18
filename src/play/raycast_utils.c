@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 00:48:54 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 01:07:51 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:19:25 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	put_pixel(t_cub *cub, int x, int y, int color)
 
 	if (x < 0 || y < 0 || x >= cub->win.width || y >= cub->win.height)
 		return ;
-	dst = cub->mlx.img.addr
-		+ (y * cub->mlx.img.line_len + (x * cub->mlx.img.bpp / 8));
+	dst = cub->img.addr
+		+ (y * cub->img.line_len + (x * cub->img.bpp / 8));
 	*(unsigned int *)dst = color;
 }

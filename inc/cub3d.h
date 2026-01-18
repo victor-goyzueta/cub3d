@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 21:07:06 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:54:21 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@
 # define INV_VALOR		"Please enter a valid value to floor and ceiling color"
 # define INV_CHAR		"Invalid characters"
 # define INV_PLAYER		"Invalid player"
-# define OPEN_BORDERS	"Invalid player"
+# define OPEN_BORDERS	"Map has open borders"
 # define FAIL_CPY_MAP	"Copy map to check failed"
 # define OPEN_MAP		"Map is not closed"
 # define NO_PLAYER		"Map must contain one player"
 
-# define WIDTH		1920
-# define HEIGHT		1080
+# define WIDTH		720
+# define HEIGHT		640
 # define MAX_LOOP	4242
 
 # define W	119
@@ -197,7 +197,7 @@ int		check_map_borders(t_map *map);
 
 /*map_check_utils*/
 char	**dup_map(char **src, int height);
-void	flood_fill(t_map map, int y, int x, int *error);
+void	flood_fill(t_cub *cub, int y, int x, int *error);
 
 
 /*play*/
@@ -228,6 +228,9 @@ bool	is_player_char(int c);
 bool	is_walkable(t_map *map, double x, double y);
 
 /*free_utils*/
-void	free_exit(int EXIT, t_cub *cub, char *message, char **cur);
+void	free_exit(int EXIT, t_cub *cub, char *message, char *cur);
+
+/*delete*/
+void	print_data(t_map map);
 
 #endif

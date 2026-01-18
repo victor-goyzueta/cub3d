@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:45:19 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 23:10:01 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:27:13 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@ static void	free_map(t_cub *cub)
 		free_array(cub->map.cpy_map);
 	if (cub->map.lines)
 		free_array(cub->map.lines);
-	if (cub->map.file)
-		free_array(cub->map.file);
 	if (cub->map.no)
 		free(cub->map.no);
 	if (cub->map.so)
 		free(cub->map.so);
 	if (cub->map.we)
-		free(cub->map.ea);
+		free(cub->map.we);
 	if (cub->map.ea)
 		free(cub->map.ea);
 	set_map(cub);
@@ -76,13 +74,13 @@ static void	free_all(t_cub *cub)
 	cub->mlx = NULL;
 }
 
-void	free_exit(int EXIT, t_cub *cub, char *message, char **cur)
+void	free_exit(int EXIT, t_cub *cub, char *message, char *cur)
 {
-	if (cub->mlx && cub->win->new)
-		mlx_loop_end(cub->win->new);
+	if (cub->mlx && cub->win.win)
+		mlx_loop_end(cub->win.win);
 	free_all(cub);
 	if (cur)
-		free_array(cur);
+		free(cur);
 	if (EXIT == EXIT_SUCCESS)
 	{
 		if (message)

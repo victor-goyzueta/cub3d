@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:18:26 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 20:40:54 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:16:23 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	parse_texture_north_and_south(t_cub *cub, char *line)
 		if (cub->map.no)
 			free_exit(EXIT_FAILURE, cub, DUP_NO, NULL);
 		cub->map.no = get_path(line + 3);
-		if (!cub.map.no)
+		if (!cub->map.no)
 			free_exit(EXIT_FAILURE, cub, INV_PATH, NULL);
 		if (access(cub->map.no, R_OK) != 0)
 			free_exit(EXIT_FAILURE, cub, NO_TEXT, NULL);
@@ -30,7 +30,7 @@ static int	parse_texture_north_and_south(t_cub *cub, char *line)
 		if (cub->map.so)
 			free_exit(EXIT_FAILURE, cub, DUP_SO, NULL);
 		cub->map.so = get_path(line + 3);
-		if (!cub.map.so)
+		if (!cub->map.so)
 			free_exit(EXIT_FAILURE, cub, INV_PATH, NULL);
 		if (access(cub->map.so, R_OK) != 0)
 			free_exit(EXIT_FAILURE, cub, NO_TEXT, NULL);
@@ -46,7 +46,7 @@ static int	parse_texture_west_and_east(t_cub *cub, char *line)
 		if (cub->map.we)
 			free_exit(EXIT_FAILURE, cub, DUP_WE, NULL);
 		cub->map.we = get_path(line + 3);
-		if (!cub.map.we)
+		if (!cub->map.we)
 			free_exit(EXIT_FAILURE, cub, INV_PATH, NULL);
 		if (access(cub->map.we, R_OK) != 0)
 			free_exit(EXIT_FAILURE, cub, NO_TEXT, NULL);
@@ -57,7 +57,7 @@ static int	parse_texture_west_and_east(t_cub *cub, char *line)
 		if (cub->map.ea)
 			free_exit(EXIT_FAILURE, cub, DUP_EA, NULL);
 		cub->map.ea = get_path(line + 3);
-		if (!cub.map.ea)
+		if (!cub->map.ea)
 			free_exit(EXIT_FAILURE, cub, INV_PATH, NULL);
 		if (access(cub->map.ea, R_OK) != 0)
 			free_exit(EXIT_FAILURE, cub, NO_TEXT, NULL);
@@ -116,13 +116,13 @@ void	find_map_start(t_cub *cub)
 	i = 0;
 	while (cub->map.lines[i])
 	{
-		if (has_lines_identifier(cub, lines[i]) == false)
+		if (has_lines_identifier(cub, cub->map.lines[i]) == false)
 		{
 			j = 0;
-			while (is_spacetab(lines[i][j]))
+			while (is_spacetab(cub->map.lines[i][j]))
 				j++;
-			if (lines[i][j] == '1' || lines[i][j] == '0'
-					|| is_player_char(lines[i][j]))
+			if (cub->map.lines[i][j] == '1' || cub->map.lines[i][j] == '0'
+					|| is_player_char(cub->map.lines[i][j]))
 			{
 				cub->map.start = i;
 				return ;

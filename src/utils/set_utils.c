@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:58:30 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 23:10:08 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:19:38 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	set_map(t_cub *cub)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
 	cub->map.matrix = NULL;
 	cub->map.cpy_map = NULL;
-	cub->map.lines == NULL;
+	cub->map.lines = NULL;
 	cub->map.fd = -1;
 	cub->map.line_count = 0;
 	cub->map.start = -1;

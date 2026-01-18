@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_matrix.c                                       :+:      :+:    :+:   */
+/*   get_lines.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 22:00:01 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 23:08:40 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:24:19 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	**add_line(char **array, char *line, int count)
 	char	**new;
 	int		i;
 
-	if (!array || !line)
+	if (!line)
 		return (NULL);
 	new = ft_calloc(sizeof(char *), (count + 2));
 	if (!new)

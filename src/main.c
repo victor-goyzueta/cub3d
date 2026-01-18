@@ -6,22 +6,22 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:12:11 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 20:27:30 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/13 20:50:11 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	validate_args(int argc, char *file)
+static void	validate_args(int argc, char **file)
 {
 	size_t	len;
 
 	len = 0;
 	if (argc != 2 || !file || !*file)
 		ft_perror(USAGE);
-	len = ft_strlen(file);
-	if (ft_strncmp(file + (len - 4), ".cub", 4) != 0
-		|| file[len - 5] == '/' || len < 5)
+	len = ft_strlen(*file);
+	if (ft_strncmp(*file + (len - 4), ".cub", 4) != 0
+		|| *file[len - 5] == '/' || len < 5)
 		ft_perror(NO_FORM);
 }
 

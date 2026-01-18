@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:47:59 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 21:07:54 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:55:52 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static void	validate_identifiers(t_cub *cub)
 {
 	if (!cub)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
-	if (!cub->map->no || !cub->map->so
-		|| !cub->map->we || !cub->map->ea)
+	if (!cub->map.no || !cub->map.so
+		|| !cub->map.we || !cub->map.ea)
 		free_exit(EXIT_FAILURE, cub, "No textures", NULL);
-	if (cub->map->floor_color == -1 || cub->map->ceiling_color == -1)
+	if (cub->map.floor_color == -1 || cub->map.ceiling_color == -1)
 		free_exit(EXIT_FAILURE, cub, "No colors", NULL);
 }
 
@@ -60,13 +60,13 @@ static void	map_check(t_cub *cub)
 		free_exit(EXIT_FAILURE, cub, INV_CHAR, NULL);
 	if (validate_player(&cub->map, &pos_x, &pos_y) == -1)
 		free_exit(EXIT_FAILURE, cub, INV_PLAYER, NULL);
-	if (check_map_borders(&cub->map) != -1)
+	if (check_map_borders(&cub->map) == -1)
 		free_exit(EXIT_FAILURE, cub, OPEN_BORDERS, NULL);
 	cub->map.cpy_map = dup_map(cub->map.matrix, cub->map.height);
 	if (!cub->map.cpy_map)
 		free_exit(EXIT_FAILURE, cub, FAIL_CPY_MAP, NULL);
 	error = 0;
-	flood_fill(cub->map, pos_y, pos_x, &error);
+	flood_fill(cub, pos_y, pos_x, &error);
 	if (error)
 		free_exit(EXIT_FAILURE, cub, OPEN_MAP, NULL);
 }
@@ -80,6 +80,7 @@ void	parse_cub(t_cub *cub, char *file)
 	parse_map(cub);
 	validate_identifiers(cub);
 	padding_rows(cub);
+	print_data(cub->map); //delete
 	map_check(cub);
 	init_player(cub);
 }

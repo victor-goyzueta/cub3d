@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/19 13:12:56 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 13:25:32 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,7 +199,6 @@ int		check_map_borders(t_map *map);
 /*map_check_utils*/
 char	**dup_map(char **src, int height);
 void	flood_fill(t_cub *cub, int y, int x, int *error);
-
 
 /*play*/
 int		render_frame(t_cub *cub);

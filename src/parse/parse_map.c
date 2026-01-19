@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 22:20:00 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 21:51:49 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 13:26:37 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,6 @@ void	parse_map(t_cub *cub)
 	while (cub->map.lines[++i])
 	{
 		cub->map.matrix[height] = cpy_map(ft_strdup(cub->map.lines[i]), &width);
-		// cub->map.matrix[height] = ft_strdup(cub->map.lines[i]);
-		// if (!cub->map.matrix[height])
-		// 	free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
-		// if (update_sizes(cub, (int)ft_strlen(cub->map.matrix[height]), height) == -1)
-		// 	free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
 		height++;
 	}
 	cub->map.width = width;

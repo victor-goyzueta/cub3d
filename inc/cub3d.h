@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/19 11:32:13 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 13:12:56 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@
 # define FAIL_CPY_MAP	"Copy map to check failed"
 # define OPEN_MAP		"Map is not closed"
 # define NO_PLAYER		"Map must contain one player"
+# define STACKOF		"Very large map, may cause stack overflow"
 
 # define WIDTH		720
 # define HEIGHT		640

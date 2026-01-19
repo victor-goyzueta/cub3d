@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:58:50 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 20:51:51 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 13:10:55 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,16 @@ char	**dup_map(char **src, int height)
 
 void	flood_fill(t_cub *cub, int y, int x, int *error)
 {
-	if (!error)
-		return ;
-	if (y < 0 || y >= cub->map.height || x < 0 || x >= cub->map.width)
+	static int	loop;
+
+	if (loop++ > MAX_LOOP)
 	{
 		*error = 2;
+		return ;
+	}
+	if (y < 0 || y >= cub->map.height || x < 0 || x >= cub->map.width)
+	{
+		*error = 1;
 		return ;
 	}
 	if (cub->map.cpy_map[y][x] == ' ' || cub->map.cpy_map[y][x] == '\0')

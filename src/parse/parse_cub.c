@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:47:59 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/19 11:30:46 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 13:11:43 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,10 @@ static void	map_check(t_cub *cub)
 		free_exit(EXIT_FAILURE, cub, FAIL_CPY_MAP, NULL);
 	error = 0;
 	flood_fill(cub, pos_y, pos_x, &error);
-	if (error)
+	if (error == 1)
 		free_exit(EXIT_FAILURE, cub, OPEN_MAP, NULL);
+	if (error == 2)
+		free_exit(EXIT_FAILURE, cub, STACKOF, NULL);
 }
 
 void	parse_cub(t_cub *cub, char *file)

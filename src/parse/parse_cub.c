@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:47:59 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 21:55:52 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:30:46 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	parse_cub(t_cub *cub, char *file)
 	parse_map(cub);
 	validate_identifiers(cub);
 	padding_rows(cub);
-	print_data(cub->map); //delete
 	map_check(cub);
 	init_player(cub);
 }

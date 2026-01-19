@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:45:19 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 20:27:13 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:28:14 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,10 @@ static void	free_all(t_cub *cub)
 	free_images(cub);
 	free_window(cub);
 	if (cub->mlx)
+	{
 		mlx_destroy_display(cub->mlx);
+		free(cub->mlx);
+	}
 	cub->mlx = NULL;
 }
 

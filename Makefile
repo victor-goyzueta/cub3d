@@ -6,8 +6,8 @@ CLEAR	=	\r\033[K
 NAME = cub3d
 
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 CFLAGS += -I libft
 CFLAGS += -I inc
 CFLAGS += -I minilibx
@@ -36,7 +36,6 @@ SRCS =	src/main.c							\
 		src/utils/set_utils.c				\
 		src/utils/bool_utils.c				\
 		src/utils/free_utils.c				\
-		src/delete.c						\
 
 
 OBJS = $(SRCS:src/%.c=objs/%.o)

@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/18 21:54:21 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:32:13 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define FAIL_TEXTURE	"Failure load texture"
 # define FAIL_MLX_WIN	"mlx_init_window failed"
 # define FAIL_MLX_IMG	"mlx_new_image failed"
-# define CLOSE_WIN		"Closed window"
+# define CLOSE_WIN		"Closed window\n"
 # define OPEN_FD		"Open fd"
 # define CLOSE_FD		"Close fd"
 # define NO_MAP			"Map not found"
@@ -229,8 +229,5 @@ bool	is_walkable(t_map *map, double x, double y);
 
 /*free_utils*/
 void	free_exit(int EXIT, t_cub *cub, char *message, char *cur);
-
-/*delete*/
-void	print_data(t_map map);
 
 #endif

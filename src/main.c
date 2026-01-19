@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:12:11 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/13 20:50:11 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:14:45 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ static void	play(t_cub *cub)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
 	mlx_loop_hook(cub->mlx, render_frame, cub);
 	mlx_hook(cub->win.win, 2, 1L << 0, key_press, cub);
-	mlx_hook(cub->win.win, 3, 1L << 0, key_release, cub);
-	mlx_hook(cub->win.win, 17, 1L << 0, handle_close, cub);
+	mlx_hook(cub->win.win, 3, 1L << 1, key_release, cub);
+	mlx_hook(cub->win.win, 17, 0, handle_close, cub);
 	mlx_loop(cub->mlx);
 }
 

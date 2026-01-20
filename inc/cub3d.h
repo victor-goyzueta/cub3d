@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/19 13:25:32 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/20 12:27:19 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@
 # define NO_PLAYER		"Map must contain one player"
 # define STACKOF		"Very large map, may cause stack overflow"
 
-# define WIDTH		720
-# define HEIGHT		640
+# define WIDTH		800
+# define HEIGHT		600
 # define MAX_LOOP	4242
 
 # define W	119

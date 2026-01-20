@@ -3,7 +3,7 @@ CYAN	=	\033[0;36m
 WHITE	=	\033[0m
 CLEAR	=	\r\033[K
 
-NAME = cub3d
+NAME = cub3D
 
 
 CC = cc

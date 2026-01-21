@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/20 12:27:19 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/21 12:17:09 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@
 # define NO_PLAYER		"Map must contain one player"
 # define STACKOF		"Very large map, may cause stack overflow"
 
-# define WIDTH		800
-# define HEIGHT		600
+# define WIDTH		1280
+# define HEIGHT		720
 # define MAX_LOOP	4242
 
 # define W	119

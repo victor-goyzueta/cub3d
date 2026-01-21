@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 20:28:57 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/15 00:51:34 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/21 12:35:24 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

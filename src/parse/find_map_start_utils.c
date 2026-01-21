@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_map_start_utils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:48:48 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/16 22:16:26 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/21 12:32:58 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*get_path(char *line)
 	char	*path;
 
 	path = NULL;
-	path = ft_strtrim(line, "\n\t\r");
+	path = ft_strtrim(line, "\t\n\v\f\r ");
 	if (!path)
 		return (NULL);
 	else if (!*path)
@@ -30,6 +30,8 @@ static int	parse_value(char **str)
 	int		value;
 
 	value = 0;
+	if (**str == '+')
+		(*str)++;
 	if (!ft_isdigit(**str))
 		return (-1);
 	while (ft_isdigit(**str))
@@ -63,9 +65,9 @@ int	parse_color(char *str)
 	b = parse_value(&str);
 	if (b == -1)
 		return (-1);
-	while (*str == ' ' || *str == '\t' || *str == '\n')
+	while (is_spacetab(*str))
 		str++;
-	if (ft_isalpha(*str))
+	if (*str != '\0')
 		return (-2);
 	return ((r << 16) | (g << 8) | b);
 }

@@ -6,21 +6,11 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 22:20:00 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/22 14:53:47 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:14:31 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-// static int	update_sizes(t_cub *cub, int new_width, int new_height)
-// {
-// 	if (!cub)
-// 		return (-1);
-// 	if (new_width > cub->map.width)
-// 		cub->map.width = new_width;
-// 	cub->map.height = new_height;
-// 	return (0);
-// }
 
 static char	*cpy_map(char *line, int *width)
 {
@@ -44,7 +34,7 @@ static int	find_map_end(char **str)
 	end = 0;
 	while (str[end])
 	{
-		if (str[end][0] == '\n')
+		if (str[end][0] && str[end][0] == '\n')
 			break ;
 		end++;
 	}
@@ -63,16 +53,18 @@ void	parse_map(t_cub *cub)
 	height = find_map_end(cub->map.lines + i);
 	if (height == -1)
 		free_exit(EXIT_FAILURE, cub, INV_MAP, NULL);
+	// ft_printf_fd(2, "%i", height);
 	cub->map.matrix = ft_calloc(sizeof(char *), (height + 1));
 	if (!cub->map.matrix)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
-	// height = 0;
+	cub->map.height = height;
+	height = 0;
 	width = 0;
-	while (cub->map.lines[i])
+	while (cub->map.lines[i] && height <= cub->map.height)
 	{
-		cub->map.matrix[height - i] = cpy_map(ft_strdup(cub->map.lines[i]), &width);
+		cub->map.matrix[height] = cpy_map(ft_strdup(cub->map.lines[i]), &width);
+		height++;
 		i++;
 	}
 	cub->map.width = width;
-	cub->map.height = height;
 }

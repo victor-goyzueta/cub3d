@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:47:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/21 12:17:09 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:31:52 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@
 # define FAIL_CPY_MAP	"Copy map to check failed"
 # define OPEN_MAP		"Map is not closed"
 # define NO_PLAYER		"Map must contain one player"
+# define INV_MAP		"Invalid map"
 # define STACKOF		"Very large map, may cause stack overflow"
 
 # define WIDTH		1280

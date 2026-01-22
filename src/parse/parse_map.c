@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 22:20:00 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/19 13:26:37 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:53:47 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,22 @@ static char	*cpy_map(char *line, int *width)
 	return (cpy_line);
 }
 
+static int	find_map_end(char **str)
+{
+	int	end;
+
+	if (!str || !*str)
+		return (-1);
+	end = 0;
+	while (str[end])
+	{
+		if (str[end][0] == '\n')
+			break ;
+		end++;
+	}
+	return (end);
+}
+
 void	parse_map(t_cub *cub)
 {
 	int		i;
@@ -43,19 +59,19 @@ void	parse_map(t_cub *cub)
 
 	if (!cub)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
-	i = cub->map.start - 1;
-	height = 0;
-	while (cub->map.lines[(i + 1) + height])
-		height++;
+	i = cub->map.start;
+	height = find_map_end(cub->map.lines + i);
+	if (height == -1)
+		free_exit(EXIT_FAILURE, cub, INV_MAP, NULL);
 	cub->map.matrix = ft_calloc(sizeof(char *), (height + 1));
 	if (!cub->map.matrix)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
-	height = 0;
+	// height = 0;
 	width = 0;
-	while (cub->map.lines[++i])
+	while (cub->map.lines[i])
 	{
-		cub->map.matrix[height] = cpy_map(ft_strdup(cub->map.lines[i]), &width);
-		height++;
+		cub->map.matrix[height - i] = cpy_map(ft_strdup(cub->map.lines[i]), &width);
+		i++;
 	}
 	cub->map.width = width;
 	cub->map.height = height;

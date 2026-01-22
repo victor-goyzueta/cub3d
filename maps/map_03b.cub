@@ -1,7 +1,7 @@
-SO ./textures/quake/MetalPanel-01_64.xpm
-NO ./textures/quake/MetalPanel-01V_64.xpm
-EA ./textures/quake/ConcretePanel-01_64.xpm
-WE ./textures/quake/CorrugatedMetalPanel-01V_64.xpm
+SO ./textures/quake/south.xpm
+NO ./textures/quake/north.xpm
+EA ./textures/quake/east.xpm
+WE ./textures/quake/west.xpm
 
 F 40,40,40                
 C 10,10,0

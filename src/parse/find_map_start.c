@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:18:26 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/22 11:53:52 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:31:08 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	parse_texture_north_and_south(t_cub *cub, char *line)
 {
-	if (ft_strncmp(line, "NO ", 3) == 0)
+	if (ft_strncmp(line, "SO ", 3) == 0)
 	{
 		if (cub->map.no)
 			free_exit(EXIT_FAILURE, cub, DUP_NO, NULL);
@@ -25,7 +25,7 @@ static int	parse_texture_north_and_south(t_cub *cub, char *line)
 			free_exit(EXIT_FAILURE, cub, NO_TEXT, NULL);
 		return (1);
 	}
-	if (ft_strncmp(line, "SO ", 3) == 0)
+	if (ft_strncmp(line, "NO ", 3) == 0)
 	{
 		if (cub->map.so)
 			free_exit(EXIT_FAILURE, cub, DUP_SO, NULL);
@@ -41,7 +41,7 @@ static int	parse_texture_north_and_south(t_cub *cub, char *line)
 
 static int	parse_texture_west_and_east(t_cub *cub, char *line)
 {
-	if (ft_strncmp(line, "WE ", 3) == 0)
+	if (ft_strncmp(line, "EA ", 3) == 0)
 	{
 		if (cub->map.we)
 			free_exit(EXIT_FAILURE, cub, DUP_WE, NULL);
@@ -52,7 +52,7 @@ static int	parse_texture_west_and_east(t_cub *cub, char *line)
 			free_exit(EXIT_FAILURE, cub, NO_TEXT, NULL);
 		return (1);
 	}
-	if (ft_strncmp(line, "EA ", 3) == 0)
+	if (ft_strncmp(line, "WE ", 3) == 0)
 	{
 		if (cub->map.ea)
 			free_exit(EXIT_FAILURE, cub, DUP_EA, NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_map_start_utils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:48:48 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/21 12:32:58 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:06:53 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static int	parse_value(char **str)
 	int		value;
 
 	value = 0;
+	while (is_spacetab(**str))
+		(*str)++;
 	if (**str == '+')
 		(*str)++;
 	if (!ft_isdigit(**str))
@@ -41,6 +43,8 @@ static int	parse_value(char **str)
 	}
 	if (value < 0 || value > 255)
 		return (-1);
+	while (is_spacetab(**str))
+		(*str)++;
 	return (value);
 }
 
@@ -52,8 +56,6 @@ int	parse_color(char *str)
 
 	if (!str)
 		return (-1);
-	while (*str == ' ' || *str == '\t')
-		str++;
 	r = parse_value(&str);
 	if (r == -1 || *str != ',')
 		return (-1);

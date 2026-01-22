@@ -3,7 +3,7 @@ SO ./textures/quake/MetalPanel-01_64.xpm
 WE ./textures/quake/CorrugatedMetalPanel-01V_64.xpm
 EA ./textures/quake/ConcretePanel-01_64.xpm
 
-F 1,100,0
+F        1,       +100     ,  0                             
 C 225,30,0
 
         1111111111111111111111111

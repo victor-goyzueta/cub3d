@@ -1,7 +1,7 @@
-NO ./textures/quake/MetalPanel-01V_64.xpm
-SO ./textures/quake/MetalPanel-01_64.xpm
-WE ./textures/quake/CorrugatedMetalPanel-01V_64.xpm
-EA ./textures/quake/ConcretePanel-01_64.xpm
+NO ./textures/quake/north.xpm
+SO ./textures/quake/south.xpm
+WE ./textures/quake/west.xpm
+EA ./textures/quake/east.xpm
 
 111111111111111111111
 101000001000000000001

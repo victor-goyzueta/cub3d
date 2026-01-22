@@ -1,5 +1,5 @@
 /* XPM */
-static char *MetalPanel_01V_64[] = {
+static char *east[] = {
 /* columns rows colors chars-per-pixel */
 "64 64 236 2 ",
 "   c #0E0E0E",

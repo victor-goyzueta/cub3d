@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 22:20:00 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/22 14:14:31 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/23 22:30:15 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,28 @@ static char	*cpy_map(char *line, int *width)
 
 static int	find_map_end(char **str)
 {
-	int	end;
+	int		end;
+	int		j;
+	bool	found;
 
 	if (!str || !*str)
 		return (-1);
 	end = 0;
 	while (str[end])
 	{
-		if (str[end][0] && str[end][0] == '\n')
-			break ;
+		ft_printf_fd(2, "%s", str[end]);
+		j = 0;
+		found = false;
+		while (str[end][j])
+		{
+			if (str[end][j] == ' ' || str[end][j] == '\t'
+				|| str[end][j] == 1 || str[end][j] == '0'
+				|| is_player_char(str[end][j]))
+				found = true;
+			j++;
+		}
+		if (!found)
+			return (end);
 		end++;
 	}
 	return (end);
@@ -53,7 +66,7 @@ void	parse_map(t_cub *cub)
 	height = find_map_end(cub->map.lines + i);
 	if (height == -1)
 		free_exit(EXIT_FAILURE, cub, INV_MAP, NULL);
-	// ft_printf_fd(2, "%i", height);
+	ft_printf_fd(2, "%i\n", height);
 	cub->map.matrix = ft_calloc(sizeof(char *), (height + 1));
 	if (!cub->map.matrix)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);

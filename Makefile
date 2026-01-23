@@ -6,7 +6,7 @@ CLEAR	=	\r\033[K
 NAME = cub3D
 
 
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 CFLAGS += -I libft
 CFLAGS += -I inc

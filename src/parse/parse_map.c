@@ -6,7 +6,7 @@
 /*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 22:20:00 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2026/01/26 00:41:38 by vgoyzuet         ###   ########.fr       */
+/*   Updated: 2026/01/26 01:46:02 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ void	parse_map(t_cub *cub)
 		free_exit(EXIT_FAILURE, cub, FAIL_ALLOC, NULL);
 	i = cub->map.start;
 	height = find_map_end(cub->map.lines + i);
-	if (height == -1 || has_more_lines(cub->map.lines + (cub->map.start + height)))
+	if (height == -1
+		|| has_more_lines(cub->map.lines + (cub->map.start + height)))
 		free_exit(EXIT_FAILURE, cub, INV_MAP, NULL);
 	cub->map.matrix = ft_calloc(sizeof(char *), (height + 1));
 	if (!cub->map.matrix)

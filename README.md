@@ -1,5 +1,7 @@
 # cub3D
 
+![cub3d](cub3d.gif)
+
 ## Descripción
 cub3D es un motor gráfico que renderiza un entorno 3D a partir de un mapa 2D usando el algoritmo de raycasting. Permite movimiento y rotación en primera persona dentro del mapa, ofreciendo una experiencia de juego básica y visualización del entorno.
 
@@ -36,7 +38,7 @@ cub3D
 Ejecutar el programa con un archivo `.cub` válido:
 
 ```bash
-./cub3D maps/mapa.cub
+./cub3D maps/*.cub
 ```
 
 * El archivo `.cub` es **obligatorio**
